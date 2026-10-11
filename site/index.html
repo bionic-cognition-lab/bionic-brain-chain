@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bionic Brain Chain</title>
+  <meta name="description" content="Five LLM agents modeled on brain regions, chained into a fact-checked answering pipeline.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/showcase.css">
+</head>
+<body>
+  <nav class="site-nav" aria-label="Sections">
+    <ul>
+      <li><a href="#stations">Stations</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#runs">All runs</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero wrap">
+    <p class="eyebrow">Brain and Learning · Knowledge Building Garden</p>
+    <h1>Bionic Brain Chain</h1>
+    <p class="lede">Five LLM agents, each modeled on a brain region, pass a question down a fixed pipeline. Each one may cite only its own small micro-textbook, and the last station fact-checks everything before it answers.</p>
+    <div class="tiles">
+      <div class="tile"><span class="tile-label">Agents participating</span><span class="tile-value">5<small> / 5</small></span><span class="tile-delta">in every run since v1, up from 2</span></div>
+      <div class="tile"><span class="tile-label">Clean stops</span><span class="tile-value">All runs</span><span class="tile-delta">since v3</span></div>
+      <div class="tile"><span class="tile-label">Hard questions handled well</span><span class="tile-value">3<small> of 5</small></span><span class="tile-delta">v9.x, single runs; both neuromyths still unresolved</span></div>
+      <div class="tile"><span class="tile-label">Rule versions</span><span class="tile-value">12</span><span class="tile-delta">v0 to v9.2</span></div>
+    </div>
+    <p class="notice">The rules, textbook pages, and experiment log are kept private until the inter-group contest is over, and will be published here afterwards.</p>
+  </header>
+
+  <main>
+    <section class="wrap" id="stations">
+      <h2>The stations</h2>
+      <p class="section-lede">The question enters at the Commander and passes through every station in order. Each station's built-in bias comes from the platform's fixed role contract.</p>
+      <ol class="station-list"></ol>
+    </section>
+
+    <section class="wrap" id="results">
+      <h2>Results by version</h2>
+      <p class="section-lede">The platform scores each run on grounding, baseless nodes, participation, and clean stop, each from 1 to 4. Each value below is one or two single runs, and different versions were measured on different questions, so small differences are within run-to-run noise and are not a trend.</p>
+      <div id="results-body">
+        <figure class="viz">
+          <figcaption>
+            <span class="viz-title">Average auto-score, v0 to v8</span>
+            <span class="viz-sub">out of 4 · one representative run per version; the question changes between versions (hover or show the table)</span>
+            <button class="table-toggle" type="button" aria-pressed="false" data-target="score">Show table</button>
+          </figcaption>
+          <div class="chart" id="chart-score"></div>
+          <div class="table-view" id="table-score" hidden></div>
+        </figure>
+
+        <figure class="viz">
+          <figcaption>
+            <span class="viz-title">Grounding rate on the Mozart effect question</span>
+            <span class="viz-sub">share of the output traceable to textbook text · single runs; v6 was not tested on this question</span>
+            <button class="table-toggle" type="button" aria-pressed="false" data-target="grounding">Show table</button>
+          </figcaption>
+          <div class="chart" id="chart-grounding"></div>
+          <div class="table-view" id="table-grounding" hidden></div>
+        </figure>
+
+        <figure class="viz">
+          <figcaption>
+            <span class="viz-title">Hard-question stress test, v8 to v9.2</span>
+            <span class="viz-sub">average score / grounding, one run per cell; blank cells were not run</span>
+          </figcaption>
+          <div class="table-view" id="stress-table"></div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="wrap" id="runs">
+      <h2>All recorded runs</h2>
+      <p class="section-lede">Every recorded trial run. Filter by question or version; each small chart shows one question's runs across versions.</p>
+      <div id="explorer"></div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>A project for the course Brain and Learning, built on the Knowledge Building Garden platform. Textbook: <em>Brain Facts</em>, Society for Neuroscience.</p>
+  </footer>
+
+  <div class="tooltip" id="tooltip" role="status" hidden></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+/* Stat tiles */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 2px; }
+.tile-label { color: var(--text-secondary); font-size: 0.9rem; }
+.tile-value { font-size: 2rem; font-weight: 600; line-height: 1.2; }
+.tile-value small { font-size: 1rem; font-weight: 400; color: var(--text-muted); }
+.tile-delta { color: var(--text-muted); font-size: 0.85rem; }
+
+/* Cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.card p { margin: 0; color: var(--text-secondary); }
+
+.panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: none; }
+
+/* Segmented control (version pickers) */
+.segmented { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; background: var(--surface-2); border-radius: 10px; margin-bottom: 16px; }
+.segmented button { border: 0; background: none; color: var(--text-secondary); font: inherit; font-size: 0.9rem; padding: 6px 12px; border-radius: 7px; cursor: pointer; }
+.segmented button[aria-pressed="true"] { background: var(--surface-1); color: var(--text-primary); font-weight: 600; box-shadow: 0 0 0 1px var(--border); }
+.segmented button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* Charts */
+.viz { margin: 0 0 24px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.viz figcaption { display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; margin-bottom: 12px; }
+.viz-title { font-weight: 600; }
+.viz-sub { color: var(--text-secondary); font-size: 0.9rem; grid-column: 1; }
+.table-toggle { grid-column: 2; grid-row: 1 / span 2; align-self: start; background: none; border: 1px solid var(--border); color: var(--text-secondary); border-radius: 8px; padding: 6px 12px; font: inherit; font-size: 0.85rem; cursor: pointer; }
+.table-toggle:hover { background: var(--surface-2); }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { font: 12px var(--font-sans); fill: var(--text-muted); font-variant-numeric: tabular-nums; }
+.chart .label-strong { fill: var(--text-primary); font-weight: 600; }
+.chart .grid { stroke: var(--grid); stroke-width: 1; }
+.chart .baseline { stroke: var(--axis); stroke-width: 1; }
+.chart .bar { fill: var(--s1); }
+.chart .hit { fill: transparent; }
+.chart .hit:focus { outline: none; }
+.chart .is-hover .bar { opacity: 0.85; }
+.chart .line { fill: none; stroke: var(--s1); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.chart .area { fill: var(--accent-wash); }
+.chart .marker { fill: var(--s1); stroke: var(--surface-1); stroke-width: 2; }
+.chart .crosshair { stroke: var(--axis); stroke-width: 1; }
+
+/* Small multiples (run explorer) */
+.multiples { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.multiple { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 12px 12px 4px; }
+.multiple h3 { font-size: 0.9rem; margin: 0 0 2px; }
+.multiple p { font-size: 0.8rem; color: var(--text-muted); margin: 0 0 4px; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin-bottom: 16px; }
+.filters label { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: var(--text-secondary); }
+.filters select { font: inherit; font-size: 0.9rem; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); }
+
+/* Tables */
+.table-view table, .data-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.table-view th, .table-view td, .data-table th, .data-table td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+.table-view .num, .data-table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.table-view th, .data-table th { color: var(--text-muted); font-weight: 500; }
+.table-scroll, .table-view { overflow-x: auto; }
+.table-scroll .data-table { min-width: 720px; }
+
+.tooltip { position: fixed; z-index: 10; pointer-events: none; background: var(--surface-1); color: var(--text-primary); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12); padding: 8px 10px; font-size: 0.85rem; max-width: 280px; }
+.tooltip .tt-head { font-weight: 600; display: flex; align-items: center; gap: 6px; }
+.tooltip .tt-body { color: var(--text-secondary); }
+
+@media (max-width: 760px) {
+  .viz figcaption { grid-template-columns: 1fr; }
+  .table-toggle { grid-column: 1; grid-row: auto; justify-self: start; margin-top: 8px; }
+}
