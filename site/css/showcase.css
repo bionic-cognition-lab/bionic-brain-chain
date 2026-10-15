@@ -7,4 +7,12 @@
 .station-card .node-region { margin: 0; }
 .station-card .station-bias { font-size: 0.85rem; }
 .station-card .station-bias strong { color: var(--text-primary); font-weight: 600; }
+.brains { display: grid; gap: 16px; }
+.brain { display: flex; flex-direction: column; gap: 10px; }
+.brain h3 { margin: 0; }
+.brain p { margin: 0; color: var(--text-secondary); }
+.brain .brain-meta { color: var(--text-muted); font-size: 0.85rem; }
+.brain .brain-question strong { color: var(--text-primary); font-weight: 600; }
+.brain-stations { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.brain-stations li { display: grid; grid-template-columns: 5.5em 1fr; gap: 8px; color: var(--text-secondary); font-size: 0.9rem; }
 .notice { color: var(--text-secondary); font-size: 0.9rem; background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 12px 16px; margin: 24px 0 0; max-width: 46em; }

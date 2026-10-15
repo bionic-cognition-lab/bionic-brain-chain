@@ -3,8 +3,10 @@ import { loadCsv } from "./lib/data.js";
 import { renderStations } from "./components/stations.js";
 import { renderResults } from "./components/results.js";
 import { renderExplorer } from "./components/explorer.js";
+import { renderBrains } from "./components/brains.js";
 
 renderStations(document.querySelector(".station-list"));
+renderBrains(document.querySelector(".brains"));
 
 const redraws = [];
 try {
